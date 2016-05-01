@@ -1,0 +1,33 @@
+nav.side-nav-left{
+	height: 100%;
+	position: fixed;
+	top: 0;
+	z-index: 1;
+	overflow: auto;
+	display: none;
+	animation: menu-left-open .4s;
+
+	header{
+		padding: 1rem 2rem;
+	}
+	ul{
+		list-style: none;
+
+		li{
+			padding: 1rem 2rem;
+		}
+	}
+
+	&.open{
+		display: block;
+	}
+
+	@keyframes menu-left-open{
+		from{
+			left: -300px;
+		}
+		to{
+			left: 0px;
+		}
+	}
+}
