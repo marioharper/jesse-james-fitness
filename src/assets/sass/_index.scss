@@ -4,13 +4,40 @@ $red: #e96656;
 $green: #34d293;
 $yellow: #f7d862;
 $black: #272727;
+$darker-black: #171717;
 
-.mflex{
+@mixin flex(){
 	display: flex;
+	display: -webkit-flex; /* safari */
+}
+
+@mixin flex-wrap(){
 	flex-wrap: wrap;
+	-webkit-flex-wrap: wrap; /* safari */
+}
+
+.valign-wrapper{
+	@include flex();
+	align-items: center;
+
+	.valign{
+		display: block;
+	}
+}
+
+a{
+	color: inherit;
+	text-decoration: none;
+	transition: all .2s ease-in-out;
+		-webkit-transition: all .2s ease-in-out;
+
+	&:hover{
+		color: $blue;
+	}
 }
 
 body{
+	position: relative;
 	background-image: url('/assets/img/barbells.jpg');
 	background-repeat: repeat;
 	background-attachment: fixed;
@@ -19,12 +46,22 @@ body{
 
 	font-family: Oswald;
 	font-size: 10px;
+
+	.background-cover{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0,0,0, .4);
+		z-index: -1;
+	}
 }
+
+
 
 /* Top Menu
 -------------------------*/
 .top-menu{
-  background-color: #171717;
+  background-color: $darker-black;
   padding: 1rem;
   position: fixed;
   width: 100%;
@@ -138,12 +175,6 @@ main section{
 		background-color: white;
 		text-align: center;
 
-		@media (#{$bp-larger-than-phablet}){
-			.container .row:not(:last-child){
-				margin-bottom: 10rem;
-			}
-		}
-
 		.certification-icon{
 			display: flex;
 			align-items: center;
@@ -192,6 +223,7 @@ main section{
 			font-size: 1.7em;
 			font-weight: bold;
 			line-height: 1.1;
+			margin-bottom: 80px;
 		}
 	}
 
@@ -204,6 +236,11 @@ main section{
 
 		.subhead{
 			margin-bottom: 55px;
+		}
+
+		.row{
+			@include flex();
+			@include flex-wrap();
 		}
 
 		.service{
@@ -273,6 +310,11 @@ main section{
 		color: white;
 		text-align: center;
 
+		.row{
+			@include flex();
+			@include flex-wrap();
+		}
+
 		img{
 			width: 100%;
 			height: auto;
@@ -280,6 +322,11 @@ main section{
 		p:not(.subhead){
 			font-size: 1.4rem;
 			color: $gray;
+			margin-top: 40px;
+
+			@media (#{$bp-larger-than-phablet}){
+				margin-top: initial;
+			}
 		}
 	}
 
@@ -288,6 +335,35 @@ main section{
 	&#testimonials{
 		background-color: $blue;
 		color: white;
+
+		.testimonial{
+			background-color: white;
+			padding: 25px;
+			border-radius: 4px; 
+			margin-bottom: 40px;
+
+			.message{
+				color: $gray;
+				font-size: 1.5rem;
+				margin: 0;
+			}
+
+			.client{
+				color: black;	
+				text-align: right;
+				padding: 20px 20px 0 0;
+
+				.client-name{
+					display: block;
+					font-size: 1.8rem;
+				}
+
+				.client-type{
+					display: block;
+					font-size: 1.3rem;
+				}
+			}
+		}
 	}
 
 	/* Instagram Feed
@@ -295,6 +371,15 @@ main section{
 	&#instagram-feed{
 		background-color: white;
 		color: $blue;
+		text-align: center;
+
+		.follow-btn{
+			.fa{
+				font-size: 20px;
+				padding-right: 5px;
+			}
+			margin-top: 20px;
+		}
 	}
 
 	/* Contact
@@ -313,18 +398,28 @@ main section{
 footer{
 	background-color: $black;
 	color: $gray;
+	font-size: 1.6rem;
 
 	.columns{
 		padding: 60px 10px;
 		text-align: center;
 	}
 
-	.social{
-		list-style: none;
+	.contact-mario{
+		color: $red;
+	}
 
-		li{
-			display: inline;
-			padding: 10px;
+	.social{
+		background-color: $darker-black;
+
+		ul{
+			list-style: none;
+			background-color: $darker-black;
+			margin: 0;
+			li{
+				display: inline;
+				padding: 10px;
+			}
 		}
 	}
 }
