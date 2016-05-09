@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Jesse James Fitness - Contact</title>
+    <meta name="description" content="Get in contact with Jesse James Fitness.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="/assets/css/app.css" media="screen">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  </head>
+  <body>
+    <span class="background-cover"></span>
+    <header>
+      <!-- Main Nav
+      ===============================-->
+      <nav class="top-menu">
+  <button class="menu-btn">MENU</button>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/services.html">Services</a></li>
+    <li><a href="/about.html">About Me</a></li>
+    <li><a href="/testimonials.html">Testimonials</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+  </ul>
+</nav>
+    </header>
+
+    <main>
+      <section id="contact">
+        <div class="container">
+          <h2 class="heading">Contact</h2>
+
+          <form action="https://formspree.io/harpmari12@gmail.com" method="POST">
+            <div class="row">
+              <div class="six columns">
+                <input name="name" class="u-full-width" type="text" placeholder="Your name">
+              </div>
+              <div class="six columns">
+                <input name="email" class="u-full-width" type="email" placeholder="your@email.com" required>
+              </div>
+            </div>
+            <textarea name="message" class="u-full-width" placeholder="Hey, Jesse …" id="exampleMessage" required></textarea>
+
+            <input class="button-primary" type="submit" value="Submit">
+
+            <input type="hidden" name="_next" value="/#contact?formSub=true">
+            <input type="hidden" name="_subject" value="Contact Form" />
+            <input type="text" name="_gotcha" style="display:none" />
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer
+    ===============================-->
+    <footer>
+      <div class="container">
+  <div class="row">
+    <div class="three columns">
+      Quakertown, PA
+    </div>
+
+    <div class="three columns">
+      <a href="mailto:jesse@jessejames-fitness.com">jesse@jessejames-fitness.com</a>
+    </div>
+
+    <div class="three columns social">
+      <ul>
+        <li>
+          <a target="_blank" href="https://www.facebook.com/Jesse-James-Fitness-399005660280113" title="View Facebook Page"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+        </li>
+        <li>
+          <a target="_blank" href="https://twitter.com/jj_fitness_gugf" title="View Twitter Page"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        </li>
+        <li>
+          <a target="_blank" href="https://instagram.com/jj_fitness_gugf/" title="View Instagram Page"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="three columns">
+      Site by <a href="https://www.github.com/marioharper" title="Contact Mario Harper - Web Developer" class="contact-mario">Mario Harper</a>
+    </div>
+  </div>
+</div>
+    </footer>
+
+    <script type="text/javascript" src="/assets/js/app.js"></script>
+<script type="text/javascript">
+  (function(){
+    'use strict';
+
+    ResponsiveMenu().init();
+    instagramFeed();
+
+    //////////
+
+    function instagramFeed(){
+      var theFeed = new Instafeed({
+        get: 'user',
+        userId: '1508334142',
+        accessToken: '1508334142.c846435.57613f0180284935866a6a0b173d8691'
+      });
+
+      theFeed.run();
+    }
+    
+  })();
+</script>
+  </body>
+</html>

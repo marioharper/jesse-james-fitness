@@ -17,11 +17,12 @@
   },
   "homepage": "https://github.com/marioharper/jessejamesfitness#readme",
   "devDependencies": {
-    "gulp-gh-pages": "^0.5.4",
     "browser-sync": "^2.11.2",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
     "gulp-concat": "^2.6.0",
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-nunjucks-render": "^2.0.0",
     "gulp-sass": "^2.2.0",
     "merge-stream": "^1.0.0",
     "run-sequence": "^1.1.5"

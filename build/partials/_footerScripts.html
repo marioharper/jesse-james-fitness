@@ -1,0 +1,22 @@
+<script type="text/javascript" src="/assets/js/app.js"></script>
+<script type="text/javascript">
+  (function(){
+    'use strict';
+
+    ResponsiveMenu().init();
+    instagramFeed();
+
+    //////////
+
+    function instagramFeed(){
+      var theFeed = new Instafeed({
+        get: 'user',
+        userId: '1508334142',
+        accessToken: '1508334142.c846435.57613f0180284935866a6a0b173d8691'
+      });
+
+      theFeed.run();
+    }
+    
+  })();
+</script>

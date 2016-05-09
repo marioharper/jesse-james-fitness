@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Jesse James Fitness - Services</title>
+    <meta name="description" content="Jesse James Fitness services offered include Personal Training, Group Training, Online Programming and Nutritional Seminars.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="/assets/css/app.css" media="screen">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  </head>
+  <body>
+    <span class="background-cover"></span>
+    <header>
+      <!-- Main Nav
+      ===============================-->
+      <nav class="top-menu">
+  <button class="menu-btn">MENU</button>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/services.html">Services</a></li>
+    <li><a href="/about.html">About Me</a></li>
+    <li><a href="/testimonials.html">Testimonials</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+  </ul>
+</nav>
+    </header>
+
+    <main>
+      <!-- Services
+      ===============================-->
+      <section id="services">
+        <div class="container">
+          <h2 class="heading">Services</h2>
+          
+          <p class="subhead">Prices vary by location if trainer needs to travel. Willing to travel 30min, any direction, from Quakertown, PA.</p>
+
+          <div class="row">
+            <div class="three columns service">
+              <h5 class="title">Personal<br/>Training</h5>
+              <div class="content">
+                <div class="tiers">
+                  <div class="tier">
+                    <p class="price">$35</p>
+                    <p class="price-label">1hr starting</p>
+                  </div>
+                  <div class="tier">
+                    <p class="price">$20</p>
+                    <p class="price-label">1/2hr starting</p>
+                  </div>
+                </div>   
+                <p class="description">
+                  One on one training tailored to your needs and goals
+                </p>
+              </div>
+            </div>
+
+            <div class="three columns service">
+              <h5 class="title">Group<br/>Training</h5>
+              <div class="content">
+                <div class="tiers">
+                  <div class="tier">
+                    <p class="price">$55</p>
+                    <p class="price-label">1hr starting</p>
+                  </div>
+                  <div class="tier">
+                    <p class="price">$30</p>
+                    <p class="price-label">1/2hr starting</p>
+                  </div>
+                </div>  
+                <p class="description">
+                  Take on your workouts in a group of two or more. Price per hour is for entire group; the more people in the group, the less each person pays.
+                </p>
+              </div>
+            </div>
+
+            <div class="three columns service">
+              <h5 class="title">Online<br/>Programming</h5>
+              <div class="content">
+                <div class="tiers">
+                  <div class="tier">
+                    <p class="price">$45</p>
+                    <p class="price-label">3x per week</p>
+                  </div>
+                  <div class="tier">
+                    <p class="price">$70</p>
+                    <p class="price-label">5x per week</p>
+                  </div>
+                </div>   
+                <p class="description">
+                  On a budget? Self motivated but want to spice up your routine? Choose online programming and receive three to five workouts per week via email.
+                </p>
+              </div>
+            </div>
+
+            <div class="three columns service">
+              <h5 class="title">Nutritional<br/>Seminars</h5>
+              <div class="content">
+                <div class="tiers">
+                  <div class="tier">
+                    <p class="price">$50</p>
+                    <p class="price-label">45min lecture starting</p>
+                  </div>
+                </div>
+                <p class="description">
+                  Lecture on basics of good nutrition practices or pick your own presentation topic
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer
+    ===============================-->
+    <footer>
+      <div class="container">
+  <div class="row">
+    <div class="three columns">
+      Quakertown, PA
+    </div>
+
+    <div class="three columns">
+      <a href="mailto:jesse@jessejames-fitness.com">jesse@jessejames-fitness.com</a>
+    </div>
+
+    <div class="three columns social">
+      <ul>
+        <li>
+          <a target="_blank" href="https://www.facebook.com/Jesse-James-Fitness-399005660280113" title="View Facebook Page"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+        </li>
+        <li>
+          <a target="_blank" href="https://twitter.com/jj_fitness_gugf" title="View Twitter Page"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        </li>
+        <li>
+          <a target="_blank" href="https://instagram.com/jj_fitness_gugf/" title="View Instagram Page"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="three columns">
+      Site by <a href="https://www.github.com/marioharper" title="Contact Mario Harper - Web Developer" class="contact-mario">Mario Harper</a>
+    </div>
+  </div>
+</div>
+    </footer>
+
+    <script type="text/javascript" src="/assets/js/app.js"></script>
+<script type="text/javascript">
+  (function(){
+    'use strict';
+
+    ResponsiveMenu().init();
+    instagramFeed();
+
+    //////////
+
+    function instagramFeed(){
+      var theFeed = new Instafeed({
+        get: 'user',
+        userId: '1508334142',
+        accessToken: '1508334142.c846435.57613f0180284935866a6a0b173d8691'
+      });
+
+      theFeed.run();
+    }
+    
+  })();
+</script>
+  </body>
+</html>

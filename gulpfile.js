@@ -5,12 +5,12 @@ var gulp     	= require('gulp'),
 	browserSync	= require('browser-sync').create(),
 	runSequence = require('run-sequence'),
   concat      = require('gulp-concat'),
-  merge       = require('merge-stream');
+  merge       = require('merge-stream')
+  nunjucksRender    = require('gulp-nunjucks-render');
 
 var paths = {
 	html: [
-		"src/**/*.html",
-		"src/CNAME"
+		"src/**/*.html"
 	],
 	sass: [
 		"src/assets/sass/**/*.scss"
@@ -24,9 +24,12 @@ var paths = {
   ]
 }
 
-gulp.task('html', function(){
-	return gulp.src(paths.html)
-		.pipe(gulp.dest("build"));
+gulp.task('nunjucks', function () { 
+  return gulp.src("src/**/*.html") 
+    .pipe(nunjucksRender({
+      path: ['src']
+      })) 
+    .pipe(gulp.dest('build'));
 });
 
 gulp.task('img', function(){
@@ -54,7 +57,7 @@ gulp.task('style', function() {
 gulp.task('watch', function(){
   gulp.watch(paths.js, ['js']).on('change', browserSync.reload);
   gulp.watch(paths.sass, ['style']).on('change', browserSync.reload);
-  gulp.watch(paths.html, ['html']).on('change', browserSync.reload);
+  gulp.watch(paths.html, ['nunjucks']).on('change', browserSync.reload);
 });
 
 gulp.task('browser-sync', function() {
@@ -72,14 +75,18 @@ gulp.task('clean', function(){
 });
 
 gulp.task('serve', function(callback) {
-  runSequence('clean',
-              ['style', 'js', 'img', 'html'],
+  return runSequence('clean',
+              ['style', 'js', 'img', 'nunjucks'],
               'watch',
               'browser-sync',
               callback);
 });
 
+/*copy over CNAME file and deploy build folder*/
 gulp.task('deploy', function () {
+  gulp.src('src/CNAME')
+    .pipe(gulp.dest("build"));
+
   return gulp.src("./build/**/*")
     .pipe(deploy());
 });

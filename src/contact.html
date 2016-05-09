@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Jesse James Fitness - Contact</title>
+    <meta name="description" content="Get in contact with Jesse James Fitness.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% include "partials/_headerStyles.html" %}
+  </head>
+  <body>
+    <span class="background-cover"></span>
+    <header>
+      <!-- Main Nav
+      ===============================-->
+      {% include "partials/_menu.html" %}
+    </header>
+
+    <main>
+      <section id="contact">
+        <div class="container">
+          <h2 class="heading">Contact</h2>
+
+          <form action="https://formspree.io/harpmari12@gmail.com" method="POST">
+            <div class="row">
+              <div class="six columns">
+                <input name="name" class="u-full-width" type="text" placeholder="Your name">
+              </div>
+              <div class="six columns">
+                <input name="email" class="u-full-width" type="email" placeholder="your@email.com" required>
+              </div>
+            </div>
+            <textarea name="message" class="u-full-width" placeholder="Hey, Jesse …" id="exampleMessage" required></textarea>
+
+            <input class="button-primary" type="submit" value="Submit">
+
+            <input type="hidden" name="_next" value="/#contact?formSub=true">
+            <input type="hidden" name="_subject" value="Contact Form" />
+            <input type="text" name="_gotcha" style="display:none" />
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer
+    ===============================-->
+    <footer>
+      {% include "partials/_footer.html" %}
+    </footer>
+
+    {% include "partials/_footerScripts.html" %}
+  </body>
+</html>
