@@ -1,0 +1,30 @@
+/* About
+	------------------------*/
+#about{
+
+	main{
+		background-color: white;
+		color: $black;
+		text-align: center;		
+	}
+
+	.row{
+		@include flex();
+		@include flex-wrap();
+	}
+
+	img{
+		width: 100%;
+		height: auto;
+	}
+	p:not(.subhead){
+		font-family: lato;
+		font-size: 2rem;
+		margin: 60px 0;
+		color: $text-black;
+
+		@media (#{$bp-larger-than-phablet}){
+			margin-top: initial;
+		}
+	}
+}

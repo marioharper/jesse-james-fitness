@@ -14,5 +14,12 @@
 @import "modules/spacing";
 @import "modules/side-nav";
 
+@import "shared";
+@import "menu";
+
 //pages
 @import "index";
+@import "services";
+@import "about";
+@import "testimonials";
+@import "contact";

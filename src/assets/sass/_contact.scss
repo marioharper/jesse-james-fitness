@@ -1,0 +1,25 @@
+/* Contact
+------------------------*/
+#contact{
+	.heading{
+		color: white;
+	}
+
+	label{
+		color: white;
+	}
+
+	form{
+		font-family: lato;
+		font-size: 2rem;
+		color: $text-black;
+
+		input[type='text'], input[type='email']{
+			padding: 24px 18px;
+		}
+		
+		textarea{
+			height: 200px;
+		}
+	}
+}

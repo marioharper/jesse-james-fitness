@@ -1,0 +1,40 @@
+/* Testimonials
+	------------------------*/
+#testimonials{
+
+	main{
+		background-color: $blue;
+		color: white;	
+	}
+
+	.testimonial{
+		background-color: white;
+		padding: 25px;
+		border-radius: 4px; 
+		margin-bottom: 40px;
+		font-family: lato;
+
+		.message{
+			color: $text-black;
+			font-size: 2rem;
+			margin: 0;
+		}
+
+		.client{
+			color: $black;	
+			text-align: right;
+			padding: 20px 20px 0 0;
+
+			.client-name{
+				display: block;
+				font-size: 1.8rem;
+				font-weight: 400;
+			}
+
+			.client-type{
+				display: block;
+				font-size: 1.3rem;
+			}
+		}
+	}
+}
