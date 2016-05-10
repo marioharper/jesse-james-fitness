@@ -10,7 +10,8 @@ var gulp     	= require('gulp'),
 
 var paths = {
 	html: [
-		"src/**/*.html"
+		"src/**/*.html",
+    "!src/partials/**/*.html"
 	],
 	sass: [
 		"src/assets/sass/**/*.scss"
@@ -25,7 +26,7 @@ var paths = {
 }
 
 gulp.task('nunjucks', function () { 
-  return gulp.src("src/**/*.html") 
+  return gulp.src(paths.html) 
     .pipe(nunjucksRender({
       path: ['src']
       })) 
