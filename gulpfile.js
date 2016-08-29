@@ -61,30 +61,24 @@ gulp.task('watch', function(){
   gulp.watch(paths.html, ['nunjucks']).on('change', browserSync.reload);
 });
 
-gulp.task('browser-sync', function() {
-  browserSync.init({
-    server: {
-      baseDir: "dist",
-    },
-    port: 5000
-  });
-});
-
 // Clean build folder
 gulp.task('clean', function(){
 	return gulp.src('dist', {read: false}).pipe(clean());
 });
 
-gulp.task('serve', function(callback) {
-  return runSequence('clean',
-              ['style', 'js', 'img', 'nunjucks'],
-              'watch',
-              'browser-sync',
-              callback);
+gulp.task('build', function (callback) {
+    return runSequence(
+    'clean',
+    ['style', 'js', 'img', 'nunjucks'],
+    callback
+  );
 });
 
-/*copy over CNAME file and deploy build folder*/
-gulp.task('build', function () {
-  return gulp.src('src/CNAME')
-    .pipe(gulp.dest("dist"));
+gulp.task('serve', ['build'], function(callback) {
+  return browserSync.init({
+    server: {
+      baseDir: "dist",
+    },
+    port: 5000
+  });
 });
