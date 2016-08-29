@@ -30,18 +30,18 @@ gulp.task('nunjucks', function () {
     .pipe(nunjucksRender({
       path: ['src']
       })) 
-    .pipe(gulp.dest('build'));
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('img', function(){
   return gulp.src(paths.img)
-    .pipe(gulp.dest("build/assets/img"));
+    .pipe(gulp.dest("dist/assets/img"));
 });
 
 gulp.task('js', function(){
   return gulp.src(paths.js)
     .pipe(concat('app.js'))
-    .pipe(gulp.dest("build/assets/js"));
+    .pipe(gulp.dest("dist/assets/js"));
 });
 
 gulp.task('style', function() {
@@ -51,7 +51,7 @@ gulp.task('style', function() {
     		outputStyle: 'compressed'
 		}).on('error', sass.logError))
     .pipe(concat('app.css'))
-    .pipe(gulp.dest('build/assets/css'))
+    .pipe(gulp.dest('dist/assets/css'))
     .pipe(browserSync.stream());
 });
 
@@ -64,7 +64,7 @@ gulp.task('watch', function(){
 gulp.task('browser-sync', function() {
   browserSync.init({
     server: {
-      baseDir: "build",
+      baseDir: "dist",
     },
     port: 5000
   });
@@ -72,7 +72,7 @@ gulp.task('browser-sync', function() {
 
 // Clean build folder
 gulp.task('clean', function(){
-	return gulp.src('build', {read: false}).pipe(clean());
+	return gulp.src('dist', {read: false}).pipe(clean());
 });
 
 gulp.task('serve', function(callback) {
@@ -84,12 +84,7 @@ gulp.task('serve', function(callback) {
 });
 
 /*copy over CNAME file and deploy build folder*/
-gulp.task('deploy', function () {
-  gulp.src('src/CNAME')
-    .pipe(gulp.dest("build"));
-
-  return gulp.src("./build/**/*")
-    .pipe(deploy());
+gulp.task('build', function () {
+  return gulp.src('src/CNAME')
+    .pipe(gulp.dest("dist"));
 });
-
-gulp.task('default', ['serve']);
