@@ -20,7 +20,8 @@
 	.service{
 		background-color: white;
 		position: relative;
-		display: flex;
+		@include flex();
+		-webkit-flex-direction: column;
 		flex-direction: column;
 		margin-bottom: 30px;
 
@@ -60,13 +61,17 @@
 			background-color: white;
 			color: $black;
 			height: 100%;
-			display: flex;
+			@include flex();
+			-webkit-flex-direction: column;
 			flex-direction: column;
+			-webkit-flex-grow: 1;
 			flex-grow: 1;
 
 			.tiers{
-				display: flex;
+				@include flex();
+				-webkit-flex-direction: column;
 				flex-direction: column;
+				-webkit-flex-grow: 1;
 				flex-grow: 1;
 			}
 
