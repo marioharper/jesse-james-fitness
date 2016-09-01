@@ -40,6 +40,13 @@ a{
 	}
 }
 
+html{
+	font-size: 8px;
+	@media ($bp-larger-than-mobile ){
+		font-size: 10px;
+	}
+}
+
 body{
 	position: relative;
 	background-image: url('/assets/img/barbells.jpg');
@@ -52,7 +59,6 @@ body{
 	flex-direction: column;
 	min-height: 100vh;
 	font-family: Oswald;
-	font-size: 10px;
 
 	.background-cover{
 		position: absolute;
